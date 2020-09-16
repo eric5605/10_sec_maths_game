@@ -4,7 +4,24 @@ body {
   background-repeat: no-repeat;
 }
 
-div.custom-border {
-  border: 2px solid red;
-  backdrop-filter: blur(22px);
+.custom-border {
+  border: 2px solid grey;
+  border-radius: 75px;
+  backdrop-filter: blur(50px);
+}
+
+.custom-form {
+  width: 15%;
+  margin: auto;
+}
+
+.maths-type {
+  padding: 20px;
+  font-size: 20px;
+}
+
+#input-number {
+  width: 5%;
+  margin: auto;
+  font-size: large;
 }
