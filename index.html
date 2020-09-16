@@ -15,32 +15,35 @@
     <link href="css/custom.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
     <title>10 Second Maths Game</title>
-
   </head>
     <body>
-      <div class="container">
+
+      <div class="container custom-container">
         <div class="row text-center custom-border">
           <div class="col-xs-12">
-           <h1>10 Sec Maths Game </h1>
-            <h2>10</h2>
-            <h3>seconds remaining</h3>
-            <h3>3 + 1 = ?</h3>
-            <input type="text" class="form-control custom-form" id="maths-answer"/>
+           <h1>10 Sec Maths Game</h1>
+            <!-- <h2>10</h2> -->
 
-            <!-- user chooses +-* -->
-            <form class="maths-type">
+            <h3 id="time-left"></h3>
+              <p>time remaining</p>
+
+            <h3 id="equation">?</h3>
+            <input type="number" class="form-control text-center custom-form" id="user-input"/>
+
+            <!-- user chooses +-*/ -->
+            <form class="user-chooses">
               <label class="checkbox-inline">
-                <input type="checkbox" value="">+
+                <input class="custom-input" type="checkbox" value="">&nbsp+
                 Addition
               </label>
               <label class="checkbox-inline">
-                <input type="checkbox" value="">- Subtraction
+                <input class="custom-input" type="checkbox" value="">&nbsp- Subtraction
               </label>
               <label class="checkbox-inline">
-                <input type="checkbox" value="">/ Division
+                <input class="custom-input" type="checkbox" value="">&nbsp/ Division
               </label>
               <label class="checkbox-inline">
-                <input type="checkbox" value="">* Multiplication
+                <input class="custom-input" type="checkbox" value="">&nbsp* Multiplication
               </label>
             </form>
 

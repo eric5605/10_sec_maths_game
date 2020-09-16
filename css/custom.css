@@ -8,6 +8,7 @@ body {
   border: 2px solid grey;
   border-radius: 75px;
   backdrop-filter: blur(50px);
+  padding: 50px;
 }
 
 .custom-form {
@@ -15,7 +16,7 @@ body {
   margin: auto;
 }
 
-.maths-type {
+.user-chooses {
   padding: 20px;
   font-size: 20px;
 }
@@ -24,4 +25,13 @@ body {
   width: 5%;
   margin: auto;
   font-size: large;
+}
+
+.custom-container {
+  padding: 150px;
+}
+
+input.custom-input {
+  width: 20px;
+  height: 20px;
 }
