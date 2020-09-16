@@ -1,0 +1,10 @@
+body {
+  background-image: url(../images/crissy-jarvis-gdL-UZfnD3I-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.custom-border {
+  border: 2px solid red;
+  backdrop-filter: blur(22px);
+}
