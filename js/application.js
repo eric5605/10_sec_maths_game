@@ -26,12 +26,16 @@ var timeLeft = 10;
   }
 
   //  timer/countdown
-  var interval = setInterval(function () {
-    updateTimer(-1);
-    if (timeLeft === 0) {
-      clearInterval(interval);
-    }
-  }, 1000);
+  // var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+      if(timeLeft <= 0){
+        clearInterval(downloadTimer);
+        document.getElementById("countdown").innerHTML = "Game Over!";
+      } else {
+        document.getElementById("countdown").innerHTML = timeLeft;
+      }
+      timeLeft -= 1;
+    }, 1000);
 
   var gamePlay = function () {
     createMathsQuestion();
@@ -40,7 +44,9 @@ var timeLeft = 10;
       userAnswer = Number($(this).val());
       console.log('userAnswer: ', userAnswer);
       console.log('mathsAnswer: ', mathsAnswer);
+
       if (checkUserInput(userAnswer)) {
+        $('#user-input').val('');
         updateTimer(1);
         createMathsQuestion();
       }
