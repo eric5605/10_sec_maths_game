@@ -1,18 +1,18 @@
 body {
-  /* background-image: url(../images/crissy-jarvis-gdL-UZfnD3I-unsplash.jpg); */
-  /* background-image: url(../images/chris-liverani-ViEBSoZH6M4-unsplash.jpg); */
-
-  background-image: url(../images/math9_orig.jpg);
- /* background-image: url(../images/maths_school.jpg); */
+  background: url(../images/math9_orig.jpg);
+  height: 1000px;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.fix {
+  padding: 100px;
 }
 
 .custom-border {
   border: 2px solid grey;
   border-radius: 75px;
-  backdrop-filter: blur(50px);
-  padding: 50px;
+  backdrop-filter: blur(15px);
 }
 
 .custom-form {
@@ -29,10 +29,6 @@ body {
   width: 5%;
   margin: auto;
   font-size: large;
-}
-
-.custom-container {
-  padding: 90px;
 }
 
 input.equationTypes {

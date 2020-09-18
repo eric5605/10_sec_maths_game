@@ -53,10 +53,8 @@ var numberOfTurns = 0;
         countdownTimer();
       }
       userAnswer = Number($(this).val());
-
       // console.log('userAnswer: ', userAnswer);
       // console.log('mathsAnswer: ', mathsAnswer);
-
       if (checkUserInput(userAnswer)) {
         $('#user-input').val('');
         updateTimer(1);
