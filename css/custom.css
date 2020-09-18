@@ -12,7 +12,7 @@ body {
   border: 2px solid grey;
   border-radius: 75px;
   backdrop-filter: blur(50px);
-  padding: 100px;
+  padding: 50px;
 }
 
 .custom-form {
@@ -20,7 +20,7 @@ body {
   margin: auto;
 }
 
-.user-chooses {
+.user-chooses-maths {
   padding: 20px;
   font-size: 20px;
 }
@@ -35,7 +35,7 @@ body {
   padding: 90px;
 }
 
-input.custom-input {
+input.equationTypes {
   width: 20px;
   height: 20px;
 }
