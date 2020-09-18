@@ -1,5 +1,9 @@
 body {
-  background-image: url(../images/crissy-jarvis-gdL-UZfnD3I-unsplash.jpg);
+  /* background-image: url(../images/crissy-jarvis-gdL-UZfnD3I-unsplash.jpg); */
+  /* background-image: url(../images/chris-liverani-ViEBSoZH6M4-unsplash.jpg); */
+
+  background-image: url(../images/math9_orig.jpg);
+ /* background-image: url(../images/maths_school.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -8,7 +12,7 @@ body {
   border: 2px solid grey;
   border-radius: 75px;
   backdrop-filter: blur(50px);
-  padding: 50px;
+  padding: 100px;
 }
 
 .custom-form {
@@ -28,10 +32,24 @@ body {
 }
 
 .custom-container {
-  padding: 100px;
+  padding: 90px;
 }
 
 input.custom-input {
   width: 20px;
   height: 20px;
+}
+
+#countdown {
+  padding-top: 25px;
+}
+
+#equation {
+  padding: 25px;
+  font-size: 50px;
+}
+
+.checkbox-inline {
+  font-weight: 900;
+  font-size: 20px;
 }

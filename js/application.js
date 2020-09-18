@@ -13,7 +13,8 @@ var timeLeft = 10;
     var num2 = randomNumberGenerator(10);
     mathsAnswer = num1 + num2;
      console.log(String(num1), ' + ', String(num2), ' = ');
-     $('#equation').text(String(num1) + " + " + String(num2) + " = ");
+     // $('#equation').text(String(num1) + " + " + String(num2) + " = ");
+      $('#equation').text(String(num1) + " + " + String(num2));
   }
 
   var checkUserInput = function (userInput) {
