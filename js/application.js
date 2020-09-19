@@ -5,6 +5,7 @@ var mathsAnswer;
 var timeLeft = 10;
 var gameHasBegun = false;
 var currentScore = 0;
+var highScore = 0;
 
   var randomNumberGenerator = function (num) {
     return Math.floor((Math.random() * num) + 1);
@@ -29,9 +30,30 @@ var currentScore = 0;
     $('#countdown').text(timeLeft);
   }
   // reset game
-  var resetGame = function () {
+  var playAnotherRound = function () {
+    displayHighScore();
+    displayCurrentScore();
     timeLeft = 10;
     gameHasBegun = false;
+    currentScore = 0;
+  }
+
+  // get high score
+  var determineHighScore = function () {
+    if (currentScore > highScore) {
+      highScore = currentScore;
+    }
+  }
+
+  // display current score
+  var displayCurrentScore = function () {
+      $('#current-score').text('Current Score: ' + currentScore);
+  }
+
+  // display high score
+  var displayHighScore = function () {
+    determineHighScore();
+    $('#high-score').text('High Score: ' + highScore);
   }
 
   //  timer/countdown
@@ -40,7 +62,7 @@ var currentScore = 0;
       if(timeLeft <= 0){
         clearInterval(countdownTimer);
         document.getElementById("countdown").innerHTML = "Game Over!";
-        resetGame();
+        playAnotherRound()
       } else {
         document.getElementById("countdown").innerHTML = timeLeft;
       }
@@ -48,15 +70,10 @@ var currentScore = 0;
     }, 1000);
   }
 
-  //current score
-  var displayCurrentScore = function () {
-      $('#current-score').text('Current Score: ' + currentScore);
-  }
-
+ // start with math equation, and event listener for user input
   var playGame = function () {
     createMathsQuestion();
     // get user input
-    // $('#user-input').on('keyup', function () {
     $(document).on('keyup', '#user-input', function () {
       if (gameHasBegun === false) {
         gameHasBegun = true;
