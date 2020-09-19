@@ -38,6 +38,8 @@ input.equationTypes {
 
 #countdown {
   padding-top: 25px;
+  font-weight: 900;
+  font-size: 50px;
 }
 
 #equation {

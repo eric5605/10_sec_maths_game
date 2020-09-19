@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+// global variables
 var userAnswer;
 var mathsAnswer;
 var timeLeft = 10;
@@ -48,15 +49,15 @@ var userLimit = 10
     return highScore;
   }
 
-  // display current score
-  var displayCurrentScore = function () {
-    $('#current-score').text('Current Score: ' + currentScore);
-  }
-
   // display high score
   var displayHighScore = function () {
     determineHighScore();
     $('#high-score').text('High Score: ' + highScore);
+  }
+
+  // display current score
+  var displayCurrentScore = function () {
+    $('#current-score').text('Current Score: ' + currentScore);
   }
 
   //  timer/countdown
