@@ -6,16 +6,18 @@ var timeLeft = 10;
 var gameHasBegun = false;
 var currentScore = 0;
 var highScore = 0;
+var userLimit = 10
 
+// generate random number
   var randomNumberGenerator = function (num) {
     return Math.floor((Math.random() * num) + 1);
   }
 
+  // create maths equation
   var createMathsQuestion = function () {
-    var num1 = randomNumberGenerator(10);
-    var num2 = randomNumberGenerator(10);
+    var num1 = randomNumberGenerator(userLimit);
+    var num2 = randomNumberGenerator(userLimit);
     mathsAnswer = num1 + num2;
-     console.log(String(num1), ' + ', String(num2), ' = ');
       $('#equation').text(String(num1) + " + " + String(num2));
   }
 
@@ -43,11 +45,12 @@ var highScore = 0;
     if (currentScore > highScore) {
       highScore = currentScore;
     }
+    return highScore;
   }
 
   // display current score
   var displayCurrentScore = function () {
-      $('#current-score').text('Current Score: ' + currentScore);
+    $('#current-score').text('Current Score: ' + currentScore);
   }
 
   // display high score
@@ -59,10 +62,10 @@ var highScore = 0;
   //  timer/countdown
   function countdownTimer () {
     var countdownTimer = setInterval(function(){
-      if(timeLeft <= 0){
+      if (timeLeft <= 0){
         clearInterval(countdownTimer);
         document.getElementById("countdown").innerHTML = "Game Over!";
-        playAnotherRound()
+        playAnotherRound();
       } else {
         document.getElementById("countdown").innerHTML = timeLeft;
       }
@@ -79,17 +82,25 @@ var highScore = 0;
         gameHasBegun = true;
         countdownTimer();
       }
+      // assign value to glabal variable and check if user input is correct
       userAnswer = Number($(this).val());
-      // console.log('userAnswer: ', userAnswer);
-      // console.log('mathsAnswer: ', mathsAnswer);
       if (checkUserInput(userAnswer)) {
         currentScore++;
         displayCurrentScore();
         $('#user-input').val('');
-        updateTimer(1);
+        updateTimer(+1);
         createMathsQuestion();
       }
     });
+
+    // bootstrap range bar event listeners
+    var limiter = document.getElementById("limiter");
+    var result = document.getElementById("result");
+
+    limiter.addEventListener("input", function() {
+       result.innerHTML = limiter.value;
+       userLimit = Number(limiter.value);
+    }, false);
   }
 
 

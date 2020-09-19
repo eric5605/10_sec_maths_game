@@ -1,5 +1,4 @@
 body {
-  /* background: url(../images/math9_orig.jpg); */
   background: url(../images/g4ayx9.jpg);
   height: 1000px;
   background-size: cover;
@@ -26,10 +25,10 @@ body {
   font-size: 20px;
 }
 
-#input-number {
-  width: 5%;
+.selection-bar {
+  width: 35%;
   margin: auto;
-  font-size: large;
+  padding-top: 20px;
 }
 
 input.equationTypes {

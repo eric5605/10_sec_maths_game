@@ -13,7 +13,6 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
-    <!-- <script src="https://use.fontawesome.com/b86bd957e2.js"></script> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title>10 Second Maths Game</title>
   </head>
@@ -48,11 +47,13 @@
             </form>
 
             <!-- number limit -->
-            <h4>Number Limit</h4>
-            <h4>?</h4>
-            <input type="text" class="form-control text-center" id="input-number"/>
+            <div class="selection-bar">
+                <h4>Adjust Number Value from 10 to 50</h4>
+                <input id="limiter" type="range" min="10" max="50" value="10"/>
+            </div>
+            <h3 id="result">10</h3>
 
-      <!-- highscore and current score -->
+            <!-- highscore and current score -->
             <div class="row">
               <div class="col-xs-6">
                 <h2 id="current-score">Current Score 0</h2>
