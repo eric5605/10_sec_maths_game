@@ -3,7 +3,8 @@ $(document).ready(function(){
 var userAnswer;
 var mathsAnswer;
 var timeLeft = 10;
-var numberOfTurns = 0;
+var gameHasBegun = false;
+var currentScore = 0;
 
   var randomNumberGenerator = function (num) {
     return Math.floor((Math.random() * num) + 1);
@@ -17,17 +18,20 @@ var numberOfTurns = 0;
       $('#equation').text(String(num1) + " + " + String(num2));
   }
 
+  // check if user has correct answer
   var checkUserInput = function (userInput) {
     return (userInput === mathsAnswer);
   }
 
-  var updateTimer = function (amount) {
-    timeLeft += amount;
+  // update timer
+  var updateTimer = function (addTime) {
+    timeLeft += addTime;
     $('#countdown').text(timeLeft);
   }
+  // reset game
   var resetGame = function () {
     timeLeft = 10;
-    numberOfTurns = 0;
+    gameHasBegun = false;
   }
 
   //  timer/countdown
@@ -44,18 +48,26 @@ var numberOfTurns = 0;
     }, 1000);
   }
 
+  //current score
+  var displayCurrentScore = function () {
+      $('#current-score').text('Current Score: ' + currentScore);
+  }
+
   var playGame = function () {
     createMathsQuestion();
     // get user input
-    $('#user-input').on('keyup', function () {
-      if (numberOfTurns === 0) {
-        numberOfTurns++;
+    // $('#user-input').on('keyup', function () {
+    $(document).on('keyup', '#user-input', function () {
+      if (gameHasBegun === false) {
+        gameHasBegun = true;
         countdownTimer();
       }
       userAnswer = Number($(this).val());
       // console.log('userAnswer: ', userAnswer);
       // console.log('mathsAnswer: ', mathsAnswer);
       if (checkUserInput(userAnswer)) {
+        currentScore++;
+        displayCurrentScore();
         $('#user-input').val('');
         updateTimer(1);
         createMathsQuestion();
@@ -63,12 +75,6 @@ var numberOfTurns = 0;
     });
   }
 
-  // $('#user-input').on('keyup', function () {
-  //
-  //   userAnswer = Number($(this).val());
-  //   console.log('userAnswer: ', userAnswer);
-  //   console.log('mathsAnswer: ', mathsAnswer);
-  // });
 
   playGame();
 });

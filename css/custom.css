@@ -1,5 +1,6 @@
 body {
-  background: url(../images/math9_orig.jpg);
+  /* background: url(../images/math9_orig.jpg); */
+  background: url(../images/g4ayx9.jpg);
   height: 1000px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,7 +13,7 @@ body {
 .custom-border {
   border: 2px solid grey;
   border-radius: 75px;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(25px);
 }
 
 .custom-form {
