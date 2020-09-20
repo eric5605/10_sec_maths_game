@@ -8,19 +8,47 @@ var gameHasBegun = false;
 var currentScore = 0;
 var highScore = 0;
 var userLimit = 10;
-var operators = [];
+var operators = ['+'];
 
 // generate random number
   var randomNumberGenerator = function (num) {
     return Math.floor((Math.random() * num) + 1);
   }
 
-  // create maths equation
+  // create equation using operators array
   var createMathsQuestion = function () {
+    var opIdx = (Math.floor(Math.random() * (operators.length)));
+    var operator = operators[opIdx];
     var num1 = randomNumberGenerator(userLimit);
     var num2 = randomNumberGenerator(userLimit);
-    mathsAnswer = num1 + num2;
-      $('#equation').text(String(num1) + " + " + String(num2));
+
+    var result;
+    switch (operator) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+      result = num1 - num2;
+        while (result < 0) {
+          var num1 = randomNumberGenerator(userLimit);
+          var num2 = randomNumberGenerator(userLimit);
+          result = num1 - num2;
+        }
+        break;
+      case '*':
+        result = num1 * num2;
+        break;
+      case '/':
+        result = num1/num2;
+          while (result - Math.floor(result) !== 0) {
+            var num1 = randomNumberGenerator(userLimit);
+            var num2 = randomNumberGenerator(userLimit);
+            result = num1 / num2;
+          }
+        break;
+     }
+        mathsAnswer = result;
+        $('#equation').text(String(num1) + ' ' + String(operator) + ' ' + String(num2));
   }
 
   // check if user has correct answer
@@ -33,6 +61,7 @@ var operators = [];
     timeLeft += addTime;
     $('#countdown').text(timeLeft);
   }
+
   // reset game
   var playAnotherRound = function () {
     displayHighScore();
@@ -77,9 +106,7 @@ var operators = [];
 
  // start with math equation, and event listener for user input
   var playGame = function () {
-    console.log(operators);
     createMathsQuestion();
-    // get user input
     $(document).on('keyup', '#user-input', function () {
       if (gameHasBegun === false) {
         gameHasBegun = true;
@@ -108,14 +135,12 @@ var operators = [];
 
   // check user operation input
   $(document).on('click', '.operation-type', function () {
-    // var operators = [];
+    operators = [];
       $.each($("input[name='maths']:checked"), function() {
        operators.push($(this).val());
-       console.log(operators);
+       createMathsQuestion();
       });
     });
-
-
 
   playGame();
 });
