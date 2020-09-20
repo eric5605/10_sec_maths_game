@@ -31,11 +31,6 @@ body {
   padding-top: 20px;
 }
 
-input.equationTypes {
-  width: 20px;
-  height: 20px;
-}
-
 #countdown {
   padding-top: 25px;
   font-weight: 900;

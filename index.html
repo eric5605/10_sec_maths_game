@@ -14,14 +14,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <title>10 Second Maths Game</title>
+    <title>10 Seconds Maths Game</title>
   </head>
     <body>
 
       <div class="container fix">
         <div class="row text-center custom-border">
           <div class="col-xs-12">
-           <h1>10 Second Maths Game</h1>
+           <h1>10 Seconds Maths Game</h1>
             <h3 id="countdown">10</h3>
               <h4 class="timeRemaining">Time Remaining</h4>
 
@@ -29,20 +29,20 @@
 
             <input type="number" class="form-control text-center custom-form" id="user-input"/>
 
-            <!-- user chooses +-*/ -->
-            <form class="user-chooses-maths">
+            <!-- user chooses operator +-*/ -->
+            <form class="user-chooses-maths" id="#user-maths">
               <label class="checkbox-inline">
-                <input class="equationTypes" checked="checked" type="checkbox" value="">&nbsp<i class="fas fa-plus"></i>
+                <input class="operation-type" name="maths" checked="checked" type="checkbox" value="+">&nbsp<i class="fas fa-plus"></i>
                 Addition
               </label>
               <label class="checkbox-inline">
-                <input class="equationTypes" type="checkbox" value="">&nbsp<i class="fas fa-minus"></i> Subtraction
+                <input class="operation-type" name="maths" type="checkbox" value="-">&nbsp<i class="fas fa-minus"></i> Subtraction
               </label>
               <label class="checkbox-inline">
-                <input class="equationTypes" type="checkbox" value="">&nbsp<i class="fas fa-divide"></i> Division
+                <input class="operation-type" name="maths" type="checkbox" value="/">&nbsp<i class="fas fa-divide"></i> Division
               </label>
               <label class="checkbox-inline">
-                <input class="equationTypes" type="checkbox" value="">&nbsp<i class="fas fa-times"></i> Multiplication
+                <input class="operation-type" name="maths" type="checkbox" value="*">&nbsp<i class="fas fa-times"></i> Multiplication
               </label>
             </form>
 

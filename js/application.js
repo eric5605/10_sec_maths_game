@@ -7,7 +7,8 @@ var timeLeft = 10;
 var gameHasBegun = false;
 var currentScore = 0;
 var highScore = 0;
-var userLimit = 10
+var userLimit = 10;
+var operators = [];
 
 // generate random number
   var randomNumberGenerator = function (num) {
@@ -76,6 +77,7 @@ var userLimit = 10
 
  // start with math equation, and event listener for user input
   var playGame = function () {
+    console.log(operators);
     createMathsQuestion();
     // get user input
     $(document).on('keyup', '#user-input', function () {
@@ -103,6 +105,16 @@ var userLimit = 10
        userLimit = Number(limiter.value);
     }, false);
   }
+
+  // check user operation input
+  $(document).on('click', '.operation-type', function () {
+    // var operators = [];
+      $.each($("input[name='maths']:checked"), function() {
+       operators.push($(this).val());
+       console.log(operators);
+      });
+    });
+
 
 
   playGame();
